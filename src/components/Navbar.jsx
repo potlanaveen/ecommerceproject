@@ -48,28 +48,28 @@ function Navbar() {
       <section className="relative mx-auto my-12">
         <nav className="flex justify-between  w-screen fixed z-50 top-0 bg-custom-white dark:bg-custom-dark ">
           <div className="px-5 xl:px-12 py-6 flex w-full items-center">
-            <a className="font-ibmplex text-lg" href="#">
+            <a className="font-ibmplex text-lg cursor-pointer" href="#/">
               RUSTYSHOP
             </a>
 
             <ul className="hidden md:flex px-4 mr-auto ml-12 font-poppins space-x-8 mt-1">
               <li>
-                <a className="hover:text-green-600" href="#">
+                <a className="hover:text-green-600 cursor-pointer" href="#/">
                   Home
                 </a>
               </li>
               <li>
-                <a className="hover:text-gray-600" href="#">
+                <a className="hover:text-gray-600 cursor-pointer" href="#/category">
                   Category
                 </a>
               </li>
               <li>
-                <a className="hover:text-gray-600" href="#">
+                <a className="hover:text-gray-600 cursor-pointer" href="#/collections">
                   Collections
                 </a>
               </li>
               <li>
-                <a className="hover:text-gray-600" href="#">
+                <a className="hover:text-gray-600 cursor-pointer" href="#/contact">
                   Contact Us
                 </a>
               </li>

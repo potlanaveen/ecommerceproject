@@ -1,98 +1,66 @@
 import React from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { cartAction } from "../redux/actions/cart";
 import { useDispatch } from "react-redux";
 
 function ProductItems({ val }) {
-  const { id } = useParams();
   const dispatch = useDispatch();
+  
+  if (!val) return null;
+
   const addCart = () => {
     dispatch(cartAction(val.id, 1));
     dispatch({ type: "DRAWER", payload: true });
   };
+
   return (
-    <div className="mt-12 mx-2">
-      <NavLink to={`/detail/${val.id}`}>
-        <div className="w-72 h-[500px] max-w-sm rounded-lg shadow dark:shadow-slate-500 m-4 hover:border">
-          <a className="flex justify-center bg-white rounded-lg mb-10">
-            <img
-              className="p-8 rounded-t-lg h-64"
-              src={val?.image}
-              alt="product image"
-            />
-          </a>
-          <div className="px-5 pb-5">
-            <a>
-              <h5 className="text-base font-semibold tracking-tight ">
-                {val?.title}
-              </h5>
-            </a>
-            <div className="flex items-center mt-2.5">
-              <svg
-                aria-hidden="true"
-                className="w-5 h-5 text-yellow-300"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <title>First star</title>
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-              </svg>
-              <svg
-                aria-hidden="true"
-                className="w-5 h-5 text-yellow-300"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <title>Second star</title>
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-              </svg>
-              <svg
-                aria-hidden="true"
-                className="w-5 h-5 text-yellow-300"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <title>Third star</title>
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-              </svg>
-              <svg
-                aria-hidden="true"
-                className="w-5 h-5 text-yellow-300"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <title>Fourth star</title>
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-              </svg>
-              <svg
-                aria-hidden="true"
-                className="w-5 h-5 text-yellow-300"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <title>Fifth star</title>
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-              </svg>
-              <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-800 ml-3">
-                5.0
-              </span>
-            </div>
-          </div>
+    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md dark:shadow-lg hover:shadow-xl dark:hover:shadow-2xl transition-all duration-300 overflow-hidden h-full flex flex-col hover:scale-105 transform">
+      <NavLink to={`/detail/${val.id}`} className="flex-1 flex flex-col">
+        <div className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center p-4 h-48 overflow-hidden">
+          <img
+            className="h-40 w-40 object-contain hover:scale-110 transition-transform duration-300"
+            src={val?.image}
+            alt={val?.title}
+          />
+        </div>
+        <div className="px-4 pt-4 pb-2 flex-1 flex flex-col">
+          <h3 className="text-sm font-semibold text-gray-800 dark:text-white line-clamp-2 min-h-10">
+            {val?.title}
+          </h3>
+          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1 capitalize font-medium">
+            {val?.category}
+          </p>
+          <p className="text-xs text-gray-600 dark:text-gray-300 mt-2 line-clamp-2 flex-1">
+            {val?.description}
+          </p>
         </div>
       </NavLink>
-      <div className="flex items-center mx-10 justify-between relative bottom-20">
-        <span className="text-xl font-poppins ">{val?.price}$</span>
-        <a
-          className="text-black bg-custom-green hover:bg-custom-light-green focus:ring-2 focus:outline-none focus:bg-custom-dark-green font-medium rounded-lg text-sm px-5 py-2.5 text-center cursor-pointer"
-          onClick={() => addCart()}
+      
+      <div className="px-4 py-3 border-t border-gray-200 dark:border-gray-700 flex items-center justify-between">
+        <div className="flex flex-col">
+          <span className="text-lg font-bold text-custom-green dark:text-custom-green">${val?.price?.toFixed(2)}</span>
+          <div className="flex items-center mt-1">
+            <div className="flex">
+              {[...Array(5)].map((_, i) => (
+                <svg
+                  key={i}
+                  className="w-3 h-3 text-yellow-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+            <span className="text-xs text-gray-500 dark:text-gray-400 ml-1">5.0</span>
+          </div>
+        </div>
+        <button
+          onClick={addCart}
+          className="bg-custom-green hover:bg-custom-dark-green text-black font-semibold py-2 px-3 rounded-lg transition duration-300 text-xs whitespace-nowrap ml-2 hover:shadow-md active:scale-95"
         >
-          Add to cart
-        </a>
+          Add
+        </button>
       </div>
     </div>
   );

@@ -27,9 +27,21 @@ const divStyle = {
   alignItems: "center",
   justifyContent: "center",
   backgroundSize: "cover",
+  backgroundPosition: "center",
   height: "500px",
   borderRadius: "15px",
-  
+  position: "relative",
+  overflow: "hidden",
+};
+
+const overlayStyle = {
+  position: "absolute",
+  top: 0,
+  left: 0,
+  right: 0,
+  bottom: 0,
+  background: "linear-gradient(135deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.1) 100%)",
+  zIndex: 1,
 };
 const slideImages = [
   {
@@ -49,17 +61,19 @@ const slideImages = [
 
 function Slider() {
   return (
-    <div className="flex justify-center">
-      <div className="w-4/5 pt-12">
+    <div className="bg-gray-50 dark:bg-custom-dark py-8 px-4">
+      <div className="max-w-7xl mx-auto">
         <Slide {...properties} transitionDuration={500}>
           {slideImages.map((slideImage, index) => (
-            <div key={index}>
+            <div key={index} className="px-2">
               <div
                 style={{
                   ...divStyle,
                   backgroundImage: `url(${slideImage.url})`,
                 }}
-              ></div>
+              >
+                <div style={overlayStyle}></div>
+              </div>
             </div>
           ))}
         </Slide>
