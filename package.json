@@ -12,6 +12,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "apminsight": "^5.4.0",
     "axios": "^1.3.5",
     "firebase": "^9.20.0",
     "localforage": "^1.10.0",

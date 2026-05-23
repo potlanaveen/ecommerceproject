@@ -17,7 +17,7 @@ function Cart() {
     })
   return (
     <div>
-        <div className="fixed w-3/4 max-w-md p-6 border border-gray-300 dark:border-gray-600 rounded-lg shadow-lg right-2 top-24 bg-white text-gray-900 dark:text-white dark:bg-gray-800 overflow-y-auto h-4/6 z-20">
+        <div className="fixed w-3/4 max-w-md p-6 border border-gray-300 rounded-lg shadow-lg right-2 top-24 bg-white text-gray-900 overflow-y-auto h-4/6 z-20">
         <div className="flex items-center justify-between mb-6">
           <h5 className="text-xl font-bold leading-none select-none">Shopping Cart</h5>
           <div className="flex gap-3">
@@ -43,20 +43,20 @@ function Cart() {
           <div className="flow-root" key={i}>
             <ul
               role="list"
-              className="divide-y divide-gray-200 dark:divide-gray-700"
+              className="divide-y divide-gray-200"
             >
               <li className="py-4 sm:py-5">
                 <div className="flex items-center space-x-4">
                   <div className="flex-shrink-0">
                     <img
-                      className="w-16 h-16 object-contain bg-gray-50 dark:bg-gray-700 rounded p-2"
+                      className="w-16 h-16 object-contain bg-gray-50 rounded p-2"
                       src={cart?.image}
                       alt={cart?.title}
                     />
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium line-clamp-1">{cart?.title} <span className="text-custom-green">({cart?.qty})</span></p>
-                    <p className="text-xs text-gray-500 dark:text-gray-400 truncate mt-1">
+                    <p className="text-xs text-gray-500 truncate mt-1">
                       {cart?.description}
                     </p>
                   </div>
@@ -73,16 +73,16 @@ function Cart() {
           ))
         ) : (
           <div className="text-center py-8">
-            <p className="text-gray-500 dark:text-gray-400">Your cart is empty</p>
+            <p className="text-gray-500">Your cart is empty</p>
           </div>
         )
       }
-      <div className="border-t border-gray-200 dark:border-gray-700 px-0 py-6">
+      <div className="border-t border-gray-200 px-0 py-6">
               <div className="flex justify-between text-base font-medium mb-4">
                 <p>Subtotal</p>
                 <p>${subtotal.toFixed(2)}</p>
               </div>
-              <p className="text-sm text-gray-500 dark:text-gray-400">Shipping and taxes calculated at checkout.</p>
+              <p className="text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
               <div className="mt-6">
                 <a href="#" className="flex items-center justify-center rounded-md border border-transparent bg-custom-green hover:bg-custom-dark-green px-6 py-3 text-base font-medium text-black shadow-sm transition">Checkout</a>
               </div>

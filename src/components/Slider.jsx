@@ -61,7 +61,7 @@ const slideImages = [
 
 function Slider() {
   return (
-    <div className="bg-gray-50 dark:bg-custom-dark py-8 px-4">
+    <div className="bg-gray-50 py-8 px-4">
       <div className="max-w-7xl mx-auto">
         <Slide {...properties} transitionDuration={500}>
           {slideImages.map((slideImage, index) => (

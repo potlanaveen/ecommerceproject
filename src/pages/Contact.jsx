@@ -25,7 +25,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="overflow-x-hidden bg-gray-50 dark:bg-custom-dark min-h-screen">
+    <div className="overflow-x-hidden bg-gray-50 min-h-screen">
       <div className="py-12 px-4 md:px-8 lg:px-12">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center space-x-2 text-gray-400 text-sm mb-8">
@@ -55,27 +55,27 @@ const Contact = () => {
 
           <div className="mb-12">
             <h1 className="text-3xl md:text-4xl font-bold mb-2">Contact Us</h1>
-            <p className="text-gray-600 dark:text-gray-400">
+            <p className="text-gray-600">
               We'd love to hear from you. Send us a message and we'll respond as soon as possible.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <h3 className="text-lg font-semibold mb-2">Email</h3>
-              <p className="text-gray-600 dark:text-gray-400">contact@ecommerce.com</p>
+              <p className="text-gray-600">contact@ecommerce.com</p>
             </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <h3 className="text-lg font-semibold mb-2">Phone</h3>
-              <p className="text-gray-600 dark:text-gray-400">+1 (555) 123-4567</p>
+              <p className="text-gray-600">+1 (555) 123-4567</p>
             </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <h3 className="text-lg font-semibold mb-2">Location</h3>
-              <p className="text-gray-600 dark:text-gray-400">123 Main Street, City, State</p>
+              <p className="text-gray-600">123 Main Street, City, State</p>
             </div>
           </div>
 
-          <form onSubmit={handleSubmit} className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
+          <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-md">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
                 <label className="block text-sm font-medium mb-2">Name</label>
@@ -85,7 +85,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-custom-dark focus:outline-none focus:ring-2 focus:ring-custom-green"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-custom-green"
                   placeholder="Your Name"
                 />
               </div>
@@ -97,7 +97,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-custom-dark focus:outline-none focus:ring-2 focus:ring-custom-green"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-custom-green"
                   placeholder="Your Email"
                 />
               </div>
@@ -111,7 +111,7 @@ const Contact = () => {
                 value={formData.subject}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-custom-dark focus:outline-none focus:ring-2 focus:ring-custom-green"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-custom-green"
                 placeholder="Subject"
               />
             </div>
@@ -124,7 +124,7 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 rows="6"
-                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-custom-dark focus:outline-none focus:ring-2 focus:ring-custom-green resize-none"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-custom-green resize-none"
                 placeholder="Your Message"
               ></textarea>
             </div>

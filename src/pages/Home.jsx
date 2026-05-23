@@ -18,13 +18,13 @@ function Home() {
   const displayProducts = search.length > 0 ? search : products;
   
   return (
-    <div className="bg-gray-50 dark:bg-custom-dark min-h-screen">
+    <div className="bg-gray-50 min-h-screen">
       <Slider/>
       <div className='px-4 md:px-8 lg:px-12 py-12'>
         <div className='max-w-7xl mx-auto'>
           <div className='mb-8'>
             <h2 className='text-2xl md:text-4xl font-bold mb-2'>Our Products</h2>
-            <p className='text-gray-600 dark:text-gray-400'>Discover our amazing collection of quality products</p>
+            <p className='text-gray-600'>Discover our amazing collection of quality products</p>
           </div>
           
           {displayProducts && displayProducts.length > 0 ? (
@@ -35,7 +35,7 @@ function Home() {
             </div>
           ) : (
             <div className='text-center py-16'>
-              <p className='text-gray-600 dark:text-gray-400 text-lg'>No products found.</p>
+              <p className='text-gray-600 text-lg'>No products found.</p>
             </div>
           )}
         </div>

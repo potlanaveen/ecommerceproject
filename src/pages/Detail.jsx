@@ -95,7 +95,7 @@ function Detail() {
                 By{" "}
                 <a
                   href="#"
-                  className="text-custom-dark-green dark:text-custom-green hover:underline"
+                  className="text-custom-dark-green hover:underline"
                 >
                   ABC Company
                 </a>

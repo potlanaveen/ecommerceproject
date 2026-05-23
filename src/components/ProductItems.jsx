@@ -14,9 +14,9 @@ function ProductItems({ val }) {
   };
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md dark:shadow-lg hover:shadow-xl dark:hover:shadow-2xl transition-all duration-300 overflow-hidden h-full flex flex-col hover:scale-105 transform">
+    <div className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden h-full flex flex-col hover:scale-105 transform">
       <NavLink to={`/detail/${val.id}`} className="flex-1 flex flex-col">
-        <div className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-700 dark:to-gray-800 flex items-center justify-center p-4 h-48 overflow-hidden">
+        <div className="bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-4 h-48 overflow-hidden">
           <img
             className="h-40 w-40 object-contain hover:scale-110 transition-transform duration-300"
             src={val?.image}
@@ -24,21 +24,21 @@ function ProductItems({ val }) {
           />
         </div>
         <div className="px-4 pt-4 pb-2 flex-1 flex flex-col">
-          <h3 className="text-sm font-semibold text-gray-800 dark:text-white line-clamp-2 min-h-10">
+          <h3 className="text-sm font-semibold text-gray-800 line-clamp-2 min-h-10">
             {val?.title}
           </h3>
-          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1 capitalize font-medium">
+          <p className="text-xs text-gray-500 mt-1 capitalize font-medium">
             {val?.category}
           </p>
-          <p className="text-xs text-gray-600 dark:text-gray-300 mt-2 line-clamp-2 flex-1">
+          <p className="text-xs text-gray-600 mt-2 line-clamp-2 flex-1">
             {val?.description}
           </p>
         </div>
       </NavLink>
       
-      <div className="px-4 py-3 border-t border-gray-200 dark:border-gray-700 flex items-center justify-between">
+      <div className="px-4 py-3 border-t border-gray-200 flex items-center justify-between">
         <div className="flex flex-col">
-          <span className="text-lg font-bold text-custom-green dark:text-custom-green">${val?.price?.toFixed(2)}</span>
+          <span className="text-lg font-bold text-custom-green">${val?.price?.toFixed(2)}</span>
           <div className="flex items-center mt-1">
             <div className="flex">
               {[...Array(5)].map((_, i) => (
@@ -52,7 +52,7 @@ function ProductItems({ val }) {
                 </svg>
               ))}
             </div>
-            <span className="text-xs text-gray-500 dark:text-gray-400 ml-1">5.0</span>
+            <span className="text-xs text-gray-500 ml-1">5.0</span>
           </div>
         </div>
         <button

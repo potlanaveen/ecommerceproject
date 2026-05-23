@@ -5,8 +5,17 @@ import ProductItems from "../components/ProductItems";
 const Collections = () => {
   const { products } = useSelector((state) => state.products);
 
+  // Show only top-rated products (rating >= 4.0) as curated collections
+  const featuredProducts =
+    products && products.length > 0
+      ? products
+          .filter((p) => p.rating && p.rating.rate >= 4.0)
+          .sort((a, b) => b.rating.rate - a.rating.rate)
+          .slice(0, 8)
+      : [];
+
   return (
-    <div className="overflow-x-hidden bg-gray-50 dark:bg-custom-dark min-h-screen">
+    <div className="overflow-x-hidden bg-gray-50 min-h-screen">
       <div className="py-12 px-4 md:px-8 lg:px-12">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center space-x-2 text-gray-400 text-sm mb-8">
@@ -36,18 +45,18 @@ const Collections = () => {
 
           <div className="mb-8">
             <h1 className="text-3xl md:text-4xl font-bold mb-2">Exclusive Collections</h1>
-            <p className="text-gray-600 dark:text-gray-400">Curated collections of our best products</p>
+            <p className="text-gray-600">Curated collections of our best products ⭐ (4+ ratings)</p>
           </div>
 
-          {products && products.length > 0 ? (
+          {featuredProducts && featuredProducts.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {products.map((item) => (
+              {featuredProducts.map((item) => (
                 <ProductItems key={item.id} val={item} />
               ))}
             </div>
           ) : (
             <div className="text-center py-16">
-              <p className="text-gray-600 dark:text-gray-400 text-lg">No products in collections.</p>
+              <p className="text-gray-600 text-lg">No featured products in collections.</p>
             </div>
           )}
         </div>

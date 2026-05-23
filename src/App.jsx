@@ -15,6 +15,7 @@ function App() {
     <div>
       <HashRouter>
       <Navbar/>
+      <div className="pt-20">
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='detail/:id' element={<Detail/>}/>
@@ -22,6 +23,7 @@ function App() {
         <Route path='collections' element={<Collections/>}/>
         <Route path='contact' element={<Contact/>}/>
       </Routes>
+      </div>
       {drawer && <Cart/>}
       <Footer/>
       </HashRouter>

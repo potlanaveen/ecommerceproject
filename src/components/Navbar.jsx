@@ -1,32 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { BsSun, BsMoon } from "react-icons/bs";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AiOutlineSearch } from "react-icons/ai";
 import { searchAction } from "../redux/actions/search";
 
 function Navbar() {
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
-  const colorTheme = theme === "light" ? "dark" : "light";
   const dispatch = useDispatch();
   const { cartItems } = useSelector((state) => state.cart);
 
   const [search, setSearch] = useState("");
   const [isOpen, setIsOpen] = useState(false);
-
-  const changeTheme = () => {
-    setTheme(colorTheme);
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-  };
-
-  useEffect(() => {
-    changeTheme();
-  }, []);
 
   const searchPost = (e) => {
     if (e.key === "Enter") {
@@ -46,7 +28,7 @@ function Navbar() {
   return (
     <div className="overflow-x-hidden">
       <section className="relative mx-auto my-12">
-        <nav className="flex justify-between  w-screen fixed z-50 top-0 bg-custom-white dark:bg-custom-dark ">
+        <nav className="flex justify-between fixed z-50 top-4 left-4 right-4 rounded-2xl shadow-lg bg-custom-white">
           <div className="px-5 xl:px-12 py-6 flex w-full items-center">
             <a className="font-ibmplex text-lg cursor-pointer" href="#/">
               RUSTYSHOP
@@ -81,16 +63,13 @@ function Navbar() {
                 value={search}
                 onKeyDown={searchPost}
                 onChange={(e) => setSearch(e.target.value)}
-                className="shadow appearance-none border border-gray-400 dark:border-gray-500 rounded-lg w-full py-[5px] px-3 leading-tight focus:outline-none focus:shadow-outline bg-custom-white dark:bg-custom-dark dark:shadow-gray-700 pl-8 "
+                className="shadow appearance-none border border-gray-400 rounded-lg w-full py-[5px] px-3 leading-tight focus:outline-none focus:shadow-outline bg-custom-white pl-8 "
                 type="text"
                 placeholder="Search"
               />
             </div>
 
             <div className="hidden xl:flex items-center space-x-5 ">
-              <a className="hover:text-gray-600" onClick={changeTheme}>
-                {theme === "dark" ? <BsSun size={18} /> : <BsMoon size={18} />}
-              </a>
               {/* Heart */}
               <a className="hover:text-red-600" href="#">
                 <svg
